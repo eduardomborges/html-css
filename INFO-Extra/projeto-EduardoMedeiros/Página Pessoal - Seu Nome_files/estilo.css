@@ -1,0 +1,273 @@
+/* Estilizando o header */
+header {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003d6b;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto; /* Ajusta a altura para conteúdo variável */
+}
+
+header p {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+header a, footer a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+}
+
+header a:hover {
+    color: #ffffff;
+    background-color: #005f9e;
+    border-radius: 5px;
+}
+
+#logo {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    padding: 0;
+}
+
+header ul, footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header ul > li, footer ul > li {
+    display: inline-block;
+    padding: 10px;
+}
+
+header ul > li {
+    font-size: 1.2em;
+}
+
+/* Estilizando para Mobile */
+@media screen and (max-width: 720px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #logo {
+        width: 120px; /* Reduz o tamanho do logo em telas menores */
+    }
+
+    header ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    header ul > li {
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+#tituloprincipal {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 40px 0;
+    position: relative;
+}
+
+#tituloprincipal::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #4a90e2, #007aff);
+    margin: 10px auto 0;
+}
+
+/* Estilizando conteúdo principal */
+.conteudoPrincipal {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.conteudoPrincipal p {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 1.5em;
+}
+
+.conteudoPrincipal h1 {
+    text-align: center;
+}
+
+/* Adicionando estilos para a foto de perfil */
+.foto-perfil {
+    display: flex;
+    justify-content: center;
+}
+
+.foto-perfil img {
+    border-radius: 50%;
+    border: 3px solid #003d6b;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Adicionando estilos para a citação */
+.citacao {
+    width: 100%;
+}
+
+.citacao p {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-size: 1.2em;
+}
+
+.conteudoPrincipal ul {
+    list-style: none;
+    text-align: left;
+}
+
+/* Estilizando o footer */
+footer {
+    background-color: #003d6b;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+}
+
+/* Estilizando os cards */
+main.cards {
+    background: #f2f8ff;
+    width: 100%;
+    padding: 48px 0 124px;
+}
+
+main.cards h1 {
+    text-align: center;
+    padding-bottom: 36px;
+}
+
+main.cards div.social {
+    background: #f2f8ff;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards se movam para a linha seguinte se necessário */
+    justify-content: center;
+    align-items: center;
+    color: #434343;
+}
+
+main.cards div.social section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 280px;
+    margin: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main.cards div.social section.card .icon {
+    width: 64px;
+    height: 64px;
+}
+
+main.cards div.social section.card img {
+    width: 100%;
+}
+
+main.cards div.social section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards div.social section.card span {
+    font-weight: 300;
+    max-width: 350px;
+    margin-bottom: 16px;
+}
+
+main.cards div.social section.card button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilização do Card LinkedIn */
+main.cards div.social section.card#linkedin {
+    box-shadow: 20px 20px 50px -30px #0077b5;
+}
+
+main.cards div.social section.card#linkedin button {
+    background: linear-gradient(to right, #0077b5, #004182);
+}
+
+/* Estilização do Card WhatsApp */
+main.cards div.social section.card#whatsapp {
+    box-shadow: 20px 20px 50px -30px #25D366;
+}
+
+main.cards div.social section.card#whatsapp img{
+    border-radius: 50%;
+}
+
+main.cards div.social section.card#whatsapp button {
+    background: linear-gradient(to right, #25D366, #128C7E);
+}
+
+/* Estilização do Card Instagram */
+main.cards div.social section.card#instagram {
+    box-shadow: 20px 20px 50px -30px #b981da;
+}
+
+main.cards div.social section.card#instagram button {
+    background: linear-gradient(to right, #dd2a7b, #8134af);
+}
+
+/* Estilizando para Mobile */
+@media screen and (max-width: 720px) {
+    main.cards div.social {
+        flex-direction: column;
+    }
+
+    main.cards div.social section.card {
+        margin: 16px 0; /* Ajusta a margem para melhor visualização */
+    }
+
+    main.cards div.social section.card button {
+        font-size: 70%;
+    }
+}
