@@ -1,18 +1,31 @@
 :root {
     --bg-global: #f0f5fa;
+    --primary-color: #003d6b;
+    --secondary-color: #007aff;
+    --text-color: #333;
+    --font-family: 'Raleway', sans-serif;
 }
 
-/* Estilizando o header */
+body {
+    background-color: var(--bg-global);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #003d6b;
+    background-color: var(--primary-color);
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    height: auto; /* Ajusta a altura para conteúdo variável */
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header p {
@@ -26,16 +39,17 @@ header a, footer a {
     text-decoration: none;
     font-weight: bold;
     padding: 8px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header a:hover {
+header a:hover, footer a:hover {
     color: #ffffff;
     background-color: #005f9e;
     border-radius: 5px;
 }
 
 #logo {
-    width: 150px; /* Ajuste o tamanho conforme necessário */
+    width: 150px;
     height: auto;
     border-radius: 10px;
     border: 2px solid #ffffff;
@@ -61,15 +75,10 @@ header ul > li {
     font-size: 1.2em;
 }
 
-body {
-    background-color: var(--bg-global);
-}
-
 #tituloprincipal {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-family);
     font-size: 24px;
     font-weight: 700;
-    color: #f5f5f5;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -82,7 +91,7 @@ body {
     display: block;
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #4a90e2, #007aff);
+    background: linear-gradient(135deg, #4a90e2, var(--secondary-color));
     margin: 10px auto 0;
 }
 
@@ -92,13 +101,16 @@ body {
     margin: 20px auto;
     max-width: 800px;
     text-align: center;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .conteudoPrincipal p {
     font-family: 'Georgia', serif;
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-color);
     text-align: justify;
     margin-bottom: 1.5em;
 }
@@ -107,7 +119,6 @@ body {
     text-align: center;
 }
 
-/* Adicionando estilos para a foto de perfil */
 .foto-perfil {
     display: flex;
     justify-content: center;
@@ -115,12 +126,11 @@ body {
 
 .foto-perfil img {
     border-radius: 50%;
-    border: 3px solid #003d6b;
+    border: 3px solid var(--primary-color);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     display: block;
 }
 
-/* Adicionando estilos para a citação */
 .citacao {
     width: 100%;
 }
@@ -137,16 +147,15 @@ body {
     text-align: left;
 }
 
-/* Estilizando o footer */
 footer {
-    background-color: #003d6b;
+    background-color: var(--primary-color);
     color: #f5f5f5;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     clear: both;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilizando os cards */
 main.cards {
     background: var(--bg-global);
     width: 100%;
@@ -162,7 +171,7 @@ main.cards div.social {
     background: var(--bg-global);
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Permite que os cards se movam para a linha seguinte se necessário */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     color: #434343;
@@ -179,6 +188,12 @@ main.cards div.social section.card {
     max-height: 280px;
     margin: 16px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+main.cards div.social section.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 main.cards div.social section.card .icon {
@@ -210,9 +225,13 @@ main.cards div.social section.card button {
     font-size: 80%;
     font-weight: bold;
     color: #fff;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Estilização do Card LinkedIn */
+main.cards div.social section.card button:hover {
+    transform: scale(1.05);
+}
+
 main.cards div.social section.card#linkedin {
     box-shadow: 20px 20px 50px -30px #0077b5;
 }
@@ -221,12 +240,11 @@ main.cards div.social section.card#linkedin button {
     background: linear-gradient(to right, #0077b5, #004182);
 }
 
-/* Estilização do Card WhatsApp */
 main.cards div.social section.card#whatsapp {
     box-shadow: 20px 20px 50px -30px #25D366;
 }
 
-main.cards div.social section.card#whatsapp img{
+main.cards div.social section.card#whatsapp img {
     border-radius: 50%;
 }
 
@@ -234,7 +252,6 @@ main.cards div.social section.card#whatsapp button {
     background: linear-gradient(to right, #25D366, #128C7E);
 }
 
-/* Estilização do Card Instagram */
 main.cards div.social section.card#instagram {
     box-shadow: 20px 20px 50px -30px #b981da;
 }
@@ -243,7 +260,6 @@ main.cards div.social section.card#instagram button {
     background: linear-gradient(to right, #dd2a7b, #8134af);
 }
 
-/* Estilizando para Mobile */
 @media screen and (max-width: 720px) {
     header {
         flex-direction: column;
@@ -251,7 +267,7 @@ main.cards div.social section.card#instagram button {
     }
 
     #logo {
-        width: 120px; /* Reduz o tamanho do logo em telas menores */
+        width: 120px;
     }
 
     header ul {
